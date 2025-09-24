@@ -42,7 +42,8 @@ pub fn to_ppm(height: u32, width: u32, pixels: PPM) -> String {
 
     result.push_str(&format!("P3\n{} {}\n255\n", width, height));
 
-    for row in pixels.0.iter() {
+    for (i, row) in pixels.0.iter().enumerate() {
+        eprintln!("Lines remaining: {}", i);
         for column in row.iter() {
             result.push_str(&format!(
                 "{} {} {}\n",
@@ -50,6 +51,8 @@ pub fn to_ppm(height: u32, width: u32, pixels: PPM) -> String {
             ));
         }
     }
+
+    eprintln!("Done.");
 
     result
 }
