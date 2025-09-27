@@ -1,3 +1,5 @@
+pub mod color;
+
 #[derive(Debug, Copy, Clone, PartialEq)]
 pub struct Vec3 {
     pub e: [f64; 3usize],
