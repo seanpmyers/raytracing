@@ -1,6 +1,9 @@
 pub const IMAGE_WIDTH: u32 = 256u32;
 pub const IMAGE_HEIGHT: u32 = 256u32;
 
+pub mod vec3;
+pub mod filesystem {}
+
 fn main() {
     println!(
         "{}",
