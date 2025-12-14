@@ -1,4 +1,5 @@
 pub mod color;
+pub mod point3;
 
 #[derive(Debug, Copy, Clone, PartialEq)]
 pub struct Vec3 {
@@ -98,34 +99,34 @@ impl std::ops::DivAssign<f64> for Vec3 {
     }
 }
 
-impl std::ops::Add<&Vec3> for Vec3 {
+impl std::ops::Add<Vec3> for Vec3 {
     type Output = Self;
 
-    fn add(self, rhs: &Vec3) -> Self::Output {
+    fn add(self, rhs: Vec3) -> Self::Output {
         Self::new(self.x() + rhs.x(), self.y() + rhs.y(), self.z() + rhs.z())
     }
 }
 
-impl std::ops::Sub<&Vec3> for Vec3 {
+impl std::ops::Sub<Vec3> for Vec3 {
     type Output = Self;
 
-    fn sub(self, rhs: &Vec3) -> Self::Output {
+    fn sub(self, rhs: Vec3) -> Self::Output {
         Self::new(self.x() - rhs.x(), self.y() - rhs.y(), self.z() - rhs.z())
     }
 }
 
-impl std::ops::Mul<&Vec3> for Vec3 {
+impl std::ops::Mul<Vec3> for Vec3 {
     type Output = Self;
 
-    fn mul(self, rhs: &Vec3) -> Self::Output {
+    fn mul(self, rhs: Vec3) -> Self::Output {
         Self::new(self.x() * rhs.x(), self.y() * rhs.y(), self.z() * rhs.z())
     }
 }
 
-impl std::ops::Div<&Vec3> for Vec3 {
+impl std::ops::Div<Vec3> for Vec3 {
     type Output = Self;
 
-    fn div(self, rhs: &Vec3) -> Self::Output {
+    fn div(self, rhs: Vec3) -> Self::Output {
         Self::new(self.x() / rhs.x(), self.y() / rhs.y(), self.z() / rhs.z())
     }
 }
