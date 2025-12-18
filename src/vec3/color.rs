@@ -11,4 +11,10 @@ impl Color {
 
         format!("{} {} {}\n", r_byte, b_byte, g_byte)
     }
+
+    pub fn new_zero() -> Color {
+        Self {
+            e: [0f64, 0f64, 0f64],
+        }
+    }
 }

@@ -1,9 +1,10 @@
-use crate::vec3::Vec3;
+use crate::{ray::Ray, vec3::Vec3};
 
 // pub const IMAGE_WIDTH: u32 = 256u32;
 // pub const IMAGE_HEIGHT: u32 = 256u32;
-pub const ASPECT_RATIO: f32 = 16.0 / 9.0;
+pub const ASPECT_RATIO: f32 = 16.0f32 / 9.0f32;
 pub const IMAGE_WIDTH: u16 = 400u16;
+pub const VIEWPORT_HEIGHT: f32 = 1.0f32;
 
 pub mod filesystem;
 pub mod ray;
@@ -60,6 +61,10 @@ pub fn calcualte_height_from_aspect_ratio(aspect_ratio: f32, width: f32) -> u32 
     }
 
     height
+}
+
+pub fn calculate_viewport_width(viewport_height: f32, image_width: f32, image_height: f32) -> f64 {
+    viewport_height as f64 * (image_width as f64 / image_height as f64)
 }
 
 #[cfg(test)]
